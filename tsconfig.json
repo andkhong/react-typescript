@@ -1,0 +1,66 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "allowUnusedLabels": true,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "strictNullChecks": true,
+    "target": "es2015",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "rootDir": "src",
+    "outDir": "dist",
+    "baseUrl": "./src",
+    "paths": {
+      "src/*": [
+        ""
+      ],
+      "components/*": [
+        "components/*"
+      ],
+    },
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "react",
+      "react-dom",
+      "node",
+    ],
+    "lib": [
+      "dom",
+      "es5",
+      "es6",
+      "esnext",
+      "scripthost"
+    ]
+  },
+  "files": [
+    "custom.d.ts"
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "useCache": true,
+    "isolatedModules": true,
+    "reportFiles": [
+      "src/**/*.{ts,tsx}"
+    ]
+  }
+}
