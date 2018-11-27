@@ -6,6 +6,7 @@ const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const common = require('./webpack.common.js');
+const { DEVELOPMENT } = require('./settings');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -19,13 +20,14 @@ module.exports = merge(common, {
     ignored: /node_modules/,
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, '..', 'templates', 'development.html'),
-    }),
     new DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
+        SETTINGS: JSON.stringify(DEVELOPMENT)
       },
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, '..', 'templates', 'development.html'),
     }),
     new HotModuleReplacementPlugin(),
     new HardSourceWebpackPlugin(),

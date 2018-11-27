@@ -18,6 +18,7 @@ module.exports = {
   },
   resolve: {
     alias: {
+      config: `${root}/config`,
       components: `${root}/components`,
     },
     extensions: ['.tsx', '.ts', '.js', '.json'],

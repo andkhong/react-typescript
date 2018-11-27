@@ -26,6 +26,9 @@
       "src/*": [
         ""
       ],
+      "config/*": [
+        "config/*"
+      ],
       "components/*": [
         "components/*"
       ],

@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const common = require('./webpack.common.js');
+const { PRODUCTION } = require('./settings');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -13,6 +14,12 @@ module.exports = merge(common, {
     chunkFilename: '[name].[chunkhash].js'
   },
   plugins: [
+    new DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+        SETTINGS: JSON.stringify(PRODUCTION)
+      },
+    }),
     new CleanWebpackPlugin('dist', {
       root: process.cwd(),
       verbose: true
@@ -26,11 +33,6 @@ module.exports = merge(common, {
         collapseInlineTagWhitespace: true,
         removeComments: true,
         removeRedundantAttributes: true
-      },
-    }),
-    new DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
       },
     }),
   ],
