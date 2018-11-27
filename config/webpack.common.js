@@ -20,7 +20,7 @@ module.exports = {
     alias: {
       components: `${root}/components`,
     },
-    extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
+    extensions: ['.tsx', '.ts', '.js', '.json'],
     modules: [root, nodeModules],
     symlinks: false,
   },
@@ -32,7 +32,7 @@ module.exports = {
       cacheGroups: {
         default: false,
         commons: {
-          test: /node_modules/,
+          test: nodeModules,
           chunks: 'all',
           name: 'vendor',
           minChunks: 2,
@@ -44,15 +44,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        include: /src/,
-        exclude: /node_modules/,
+        test: /\.js$/,
+        include: root,
+        exclude: nodeModules,
         loader: 'babel-loader',
       },
       {
         test: /\.(ts|tsx)$/,
-        include: /src/,
-        exclude: /node_modules/,
+        include: root,
+        exclude: nodeModules,
         loader: ['babel-loader', 'awesome-typescript-loader'],
       },
     ],

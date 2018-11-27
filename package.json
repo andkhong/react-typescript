@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf dist",
     "dev": "webpack-dev-server --config ./config/webpack.development.js",
     "prod": "NODE_ENV=production webpack -p --config ./config/webpack.production.js",
     "update": "npm-check -u"
