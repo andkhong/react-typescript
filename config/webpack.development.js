@@ -24,7 +24,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, '..', 'development.html'),
+      template: path.join(__dirname, '..', 'templates', 'development.html'),
     }),
     new DefinePlugin({
       'process.env': {

@@ -54,7 +54,9 @@
   ],
   "exclude": [
     "node_modules",
-    "dist"
+    "config",
+    "dist",
+    "templates"
   ],
   "awesomeTypescriptLoaderOptions": {
     "useCache": true,
