@@ -10,8 +10,8 @@ const { PRODUCTION } = require('./settings');
 module.exports = merge(common, {
   mode: 'production',
   output: {
-    filename: '[name].[chunkhash].bundle.js',
-    chunkFilename: '[name].[chunkhash].js'
+    filename: 'js/[name].[chunkhash:6].js',
+    chunkFilename: 'js/[name].[chunkhash:6].js'
   },
   plugins: [
     new DefinePlugin({

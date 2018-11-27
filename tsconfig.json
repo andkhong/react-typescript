@@ -26,11 +26,17 @@
       "src/*": [
         ""
       ],
+      "assets/*": [
+        "assets/*"
+      ],
       "config/*": [
         "config/*"
       ],
       "components/*": [
         "components/*"
+      ],
+      "utils/*": [
+        "utils/*"
       ],
     },
     "typeRoots": [

@@ -18,8 +18,10 @@ module.exports = {
   },
   resolve: {
     alias: {
+      assets: `${root}/assets`,
       config: `${root}/config`,
       components: `${root}/components`,
+      utils: `${root}/utils`,
     },
     extensions: ['.tsx', '.ts', '.js', '.json'],
     modules: [root, nodeModules],
